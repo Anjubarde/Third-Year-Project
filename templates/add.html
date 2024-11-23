@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Order</title>
+  <style>
+     body{
+     background-color :rgb(231, 206, 253);
+     border: 3px double rgb(65, 75, 112);
+     width:500px;
+      margin-left:500px;
+      margin-top: 120px;
+      border-radius: 15px;
+        box-shadow: 20px 20px rgb(220, 185, 251);
+}
+     form {
+  max-width: 400px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+input[type="submit"]:active {
+  background-color: #3e8e41;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+  </style>
+</head>
+<body>
+	<h1>Add Order</h1>
+	<form action="{{ url_for('addInfo') }}" method="POST">
+		<label for="product">Product:</label>
+		<input type="text" id="product" name="product" required><br><br>
+
+		<label for="rate">Rate:</label>
+		<input type="number" id="rate" name="rate" required><br><br>
+
+		<label for="per">Per:</label>
+		<input type="text" id="per" name="per" required><br><br>
+
+		<button type="submit">Submit</button>
+	</form>
+    <form align="right">
+      <br>
+	<a href="{{ url_for('home') }}">Back to Home</a>
+    </form>
+</body>
+</html>
+
